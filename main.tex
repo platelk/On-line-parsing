@@ -1,18 +1,45 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
+
+%in the preamble
+%--------------------------------
+\usepackage[
+    backend=biber,
+    style=numeric,
+]{biblatex}
+
+\addbibresource{bibfile.bib}
+%--------------------------------
 
 \title{Kent Project Research: In-line parsing}
 \author{Kevin PLATEL}
 \date{March 2015}
 
 \begin{document}
-
+% Title section
 \maketitle
 
-\section{Introduction}
+% Abstract
+\title{Abstract}
+% TODO
 
+% Index section
+\renewcommand{\contentsname}{Index}
+\tableofcontents
+
+\newpage{}
+
+% Introduction
+\section{Introduction}
+\input{chapter/intro}
+
+% Background
+\section{Background}
+\input{chapter/background}
+
+\section{Reference}
 \nocite{*}
-\bibliographystyle{Veteran}
-\bibliography{IEEEabrv,IEEEexample}
+ 
+\printbibliography
 
 \end{document}
