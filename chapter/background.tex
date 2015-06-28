@@ -1,0 +1,22 @@
+Many techniques have been used to speed up development process through time on different sector of the development process, on the compilation through incremental compilation and compilation optimisation, and cache file to save result and save computation time or, one of the main part of this tools, parser.
+Many parsing algorithm exist but haven't necessarily think for the context of a IDE.
+\\We will see different parsing algorithm and their advantage and disadvantage.
+% Adding a section on compilation technique to speed up development
+\subsection{Parsing technique}
+One of the main part of a linter or syntax analyser is the parser. it's the principal part that will define the behaviour of tools, because a top-down parser will not allow the same thing than a bottom up parser.
+\subsubsection{Context and Grammar}
+An important thing to know is the context where the parser will operate, and one big point is to know the grammar that the parser have to work with. 4 type of grammar exist\cite{grune2008parsing} and each type allow a grammar to be more or less ambiguous and this "level" of ambiguity will define the difficulty to write the parser and the capacity of deductions.
+\\In fact Context Free (CF) grammar \cite{cfg_def} are easier to parse and to give better feedback in case of error because it's simpler to predict what are the next possible symbol in this context \cite{grune2008parsing}, actually most of programming language are based on CF grammar, that allow syntax analyser to offer what's are called "Auto-completion" to developers. 
+
+\subsubsection{Top down}
+Top down parser will try, at each symbol read, to create the all syntax tree possible based on which next symbol the parser can expect \cite{knuth1971top}\cite{grune2008parsing}. 
+\\One of the most known top-down parser family are LL parsers. this kind of parser which are based on prediction and expectation, are really good for error recovering\cite{panopticoncentral_2009}, that can be exactly what we want of a good syntax analyser, the trade off in computation time to create all this syntax tree, specially when the user will modify intensively the file.
+    
+\subsubsection{Bottom up}
+Bottom up parser are the inverse way of thinking of a Top down parser, on each symbol, the parser will try to create a terminal token (a word, a key word) and when the parser have a terminal token, it will try to "shift" these token to create an "upper" token\cite{knuth1971top}\cite{grune2008parsing}.
+\\One of the most known bottom-up parser family of LR parsers. This kind of parser are more sensible to ambiguity because if in the step of shifting, the accumulate token can be transform in 2 "upper" token, the parser will fail. To prevent this behaviour a sub family of LR parsers called LR(*) are used. LR(*) parser will read until '*' more token and will try to determine which make more sense, but for each other token read the complexity and the computation time increase, this is why the mostly used is the LR(1).
+\\Bottom up parser are quick, but compare to top-down parser, it can be more sensible to errors even with LR(1), but with the technology of today specially the increase number of parallel process our CPU can handle a various of the LR and LR(*) parsers called GLR for "Generalise LR", where when the parser find a ambiguous situation and thread will be created for each possible syntax tree\cite{panopticoncentral_2009} and will kill the thread if it's impossible to resolve this scenarios. This algorithm shows really great performance and error recovering, but can use more resources.
+\subsubsection{Incremental parsing}
+Incremental parsing refer to parser which will try to detect each change made and will modify the syntax tree without recreate the all tree.\cite{grune2008parsing}\cite{horspool1990incremental}
+\\Every parsing algorithm can be modify to be used as "incremental parser", but their are often combine with a prediction algorithm to try improve the error recovering, because when you can predict what can happen next, you can pre-process and so improve the speed.
+\\One technique use is to have 1 syntax tree and 1 linear representation of the data, and on each modification on the linear representation, the parser will try to modify the tree with the minimum impact and computation.
