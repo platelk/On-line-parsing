@@ -3,12 +3,8 @@ During the past 50 years, we have seen an important increase numbers of computer
 In the past, software development would be a job for patient people because each compilation could take hours, so it's been a early concern for developers because it's annoying to find that you miss a semi-columns after 5 hours waiting, so a lot of technique have been created through time to speed up this process with incremental compilation to compile only the modified file or even interpreted language as python or ruby to run directly after a modification.
 \\
 \\
-One big improvement of the software development process have been the linter with static (or dynamic) syntax analysis that check the validity of a program before and warn the developer if something he write is not valid in the language (or more with dynamic analysis). A lot of tools have been written but, as the software become more and more complex with more and more functionality, the size of these program increase too. This increase make the work of linters more difficult as the amount of data to analyse become bigger and bigger and so slower and slower.
+One big improvement of the software development process have been the parser with static (or dynamic) syntax analysis that check the validity of a program before and warn the developer if something he write is not valid in the language (or more with dynamic analysis). A lot of tools have been written but, as the software become more and more complex with more and more functionality, the size of these program increase too. This increase make the work of parser more difficult as the amount of data to analyse become bigger and bigger and so slower and slower.
 \\
-\\
-\subsection{Objectives}
-This research will focus to figure out if it's possible to improve the speed of linters in case of large file on active modification, assuming someone make some modification in the middle of the file. Parsers design to be used in this context are called "on-line" parser even if it's not an official appellation, it will be used in this paper.
-\\
-\subsection{Context and precision}
-The research will focus on the parser part of a linter, even if others optimisations are possible.
-An others restrictions will be to work always in the context of "First run", so all the principle of cache file to improve the start up time will not be cover. 
+
+% Going more in precision
+% Linter : use more parser than linter

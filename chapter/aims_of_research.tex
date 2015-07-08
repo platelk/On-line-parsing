@@ -1,0 +1,16 @@
+\subsubsection{Objectives}
+This research will focus to figure out if it's possible to improve the speed of parsers in case of large file on active modification, assuming someone make some modification in the middle of the file. Parsers design to be used in this context are called "on-line" parser even if it's not an official appellation, it will be used in this paper.\\
+
+This research will be split in 4 part :
+\begin{itemize}
+\item Analyse of actual state of the art of the research
+\item Implementation of a parser base on this research
+\item Design of a better theory model
+\item Implementation of this solution and comparison with the previous implementation
+\end{itemize}
+
+This approach have been choose to make the result and the compare more sense. The 2 implementation of the parsing algorithm will be implement on the same base, so the comparison will be the most fair as possible and the result will not be influence by a possible programming language choice difference.
+\\
+\subsubsection{Context and precision}
+The research will focus on the parser part of a linter, even if others optimisations are possible.
+An others restrictions will be to work always in the context of "First run", so all the principle of cache file to improve the start up time will not be cover.
