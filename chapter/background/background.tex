@@ -23,10 +23,3 @@ Bottom up parser are the inverse way of thinking of a Top down parser, on each s
 Incremental parsing refer to parser which will try to detect each change made and will modify the syntax tree without recreate the all tree.\cite{grune2008parsing}\cite{horspool1990incremental}
 \\Every parsing algorithm can be modify to be used as "incremental parser", but their are often combine with a prediction algorithm to try improve the error recovering, because when you can predict what can happen next, you can pre-process and so improve the speed.
 \\One technique use is to have 1 syntax tree and 1 linear representation of the data, and on each modification on the linear representation, the parser will try to modify the tree with the minimum impact and computation.
-
-% More definition about some word like ambiguity, error recovery, syntax tree, grammar
-% Don't hesitate to provide a simple definition
-% Refer more bibliography as example in some section
-
-% most known => best known
-% sensible => sensitive

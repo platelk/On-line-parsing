@@ -1,0 +1,25 @@
+To demonstrate my solution of algorithm combination, i will :
+\begin{itemize}
+\item Create a simple top-down parser from scratch
+\item Create a bottom-up (a LR(0)) parser from scratch
+\item Implement my solution with a combination of the 2 depending of the context
+\end{itemize}
+
+\subsubsection{Why re-create a parser from scratch ?}
+I choose to implement 2 parsers algorithm for several reason :
+\begin{itemize}
+\item Be sure to understand the literature\\
+Implement a parser and make it work will proof my understanding of the algorithm shown in the literature
+\item Have the same base and language implementation to make the test "fair"\\
+By implementing the parser myself rather than using a parser generator I'm sure that the comparison will be made on the same base (and possible mistake). So during the testing phase, any possible performance issue in the lexer (by example) will be shared, and so will have lesser impact on the result
+\item Make the implementation of the solution quicker\\
+The advantage by implementing the parsers by myself will be the possibility to use the same structure of syntactic trees, so the "merge" of the algorithm will be easier
+\end{itemize}
+
+\subsubsection{The algorithm : How it can work ?}
+The approach of the algorithm is a little describe in the reflexion section.\\
+The idea is to take the best of the 2 main type of algorithm in parsers today, top-down and bottom-up, and to take advantage of each one depending of the context.\\
+The notion of context here is very important because it's this notion that will determine which algorithm will run the input.\\
+\\
+The choice is to consider bottom-up algorithm quicker on context-free grammar (the grammar type of almost all programming language), but less predictive by the nature of the algorithm.\\
+And consider top-down algorithm slower than its bottom-up equivalence (like LL[0] for a LR[0]), but with the capacity to offer a better error recovering and more predictive than most of bottom-up algorithm.

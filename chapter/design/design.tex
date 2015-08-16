@@ -1,0 +1,44 @@
+In the section, i will describe more deeply the algorithm i want to implement and the choice behind
+\subsubsection{Taking care of the context}
+One most important variable to take in count is the context where the algorithm will be run. On the context will depend the "mode" of the algorithm, actually 3 context will be treated :
+\begin{itemize}
+\item Opening the file: \\
+This context is during the first read of the all file
+\item small edition in the file ( \( buffer < 500 character\) )\\
+This context is mostly during a small copy\/paste or during simple edition (keystroke)
+\item Important edition in the file ( \( buffer >= 500 character\) )\\
+This context is mostly during big copy\/paste
+\end{itemize}
+
+To know this context every time, i will have :
+
+\begin{itemize}
+\item Record where am i in the file ( character number n, line number l )
+\item Update the position of each node inside the syntax tree every time a modification are made
+\item Record the number of pending character inside the reading buffer
+\end{itemize}
+This will allow me to know which part of the file have been modify, and where the modification has been made.\\
+
+\subsubsection{Parse the smallest amount of data}
+An other part of the algorithm will be to limit the input treated by the algorithm. An easy solution when the user insert a new character is to apply the parser on the all line, but in some case it's not necessary and maybe only a part of the line can be re-parser.\\
+example :
+\begin{lstlisting}[language=C++, caption=parsing optimisation in C]
+// inserting 2 here
+//           |
+//           v
+int a = 9 * 82 / 53;
+\end{lstlisting}
+TODO : create schema of a syntax tree of this expression \\
+in this expression, the syntactic tree will show that if a modification happen between character '*' and '\/', the node impacted is '8', so before run the parser on the all line, the algorithm will run the parser on the smallest sub-syntactic tree possible to know if it's possible to resolve the input.
+
+\subsubsection{Running the right parsing algorithm}
+Knowing in which context i am, the aims will be to run the top-down or the bottom-up algorithm depend of the context.
+\begin{itemize}
+\item If it's the first read of the file or during a important edition : run the bottom-up
+\item If it's a small edition : run the top-down
+\end{itemize}
+
+The first read will create the general tree, then tree created during the top-down will be insert inside the main tree and during important modification, the all file will be re-parse.\\
+The choice to re-parse the all file during important modification is made because implement a more clever algorithm will be to much time consuming but other technique exist, as try to create a sub-tree with a bottom-up approach and then try to insert the sub-tree inside the main tree
+
+% TODO : create syntax tree of this expression

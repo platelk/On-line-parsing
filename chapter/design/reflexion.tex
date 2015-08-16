@@ -1,0 +1,36 @@
+After some research, we can see 2 important type of tools used inside of IDE for programming language analysis :
+\begin{itemize}
+\item The analyser and the parser are based on the language parser (parser used inside the compiler or interpreter of the language) as C++ with clang analyser \cite{Clang5:online} or Dartlang with dartanalyser\cite{darta0:online} or Golang with golinter \cite{golan5:online}
+\item The parser have been "re-write" to feet in IDE requirement (as more prediction) and can offer to some tools or plug-ins inside the IDE the possibility to provide a grammar definition and some function will be "trigger" (called) by the IDE when the parser will find a element that match the provided grammar
+\end{itemize}
+In the first case, the tools use a parser adapted to the requirement of the language (error recovering or speed ...) but will not necessarily consider the use case of someone continuously typing some code, doing copy \/ paste of large block of code. This choice are perfectly adapted in the case of a compiler or a interpreter because you can assume the input code have to be correct and refuse and piece of code because it miss a semi-columns is perfectly normal.
+\\
+In the second case, the parser will try as most as possible to provide useful feedback to the developer by using a parser capable of predict what his expected next and with a large capability of error-recovering. This 2 factor are great for the developer (here the user) but, in some case, this features can slow down the parser. When it happen on 2 lines it's not really important, but when you paste a 50 lines of code in the middle of a big file it can slow down significantly the process (ex: The starting time of eclipse, or when you paste a lot of line inside eclipse)
+\\
+\\
+So each technique have its advantage and its drawback, but a composite of the two can be a interesting solution to the problem of being the quickest as possible to provide feedback to the developer, when he make little or important edition inside a big or a small file.
+\\
+The idea is based on observation and research :
+\begin{itemize}
+\item Bottom-up algorithm are generally faster but less predictive
+\item Top-down algorithm are generally more predictive but slower
+\end{itemize}
+
+So based on that, bottom-up algorithms can be more useful for big file or big edition inside a file, because it will treat all the information quicker and based on experience :
+\begin{itemize}
+\item When a important edition are made is often a paste from a other source where the syntax (not necessarily the variable name, ...) will be correct
+\item When you open a big file, in lot of case a large part of the file will be correct, because it's have been generated, or because the developer (user) work on a piece of this big file and not all of them.
+\end{itemize}
+
+Top-down algorithms are very useful for error-recovering and prediction and so can give useful feedback and information to the developer. They are very powerful when working on smaller input, because base on experience :
+\begin{itemize}
+\item A lot of error made when programming are careless mistake, that can easily be corrected without the all context (the function context can be enough)
+\item A prediction of what can be expect (or not) next can be very useful.
+\\ example :
+\begin{lstlisting}[language=C++, caption=simple prediction example in C]
+// cursor after the '9' can expect '+', '*', '/', '-', '\%', ';'
+int a = 9 
+\end{lstlisting}
+Here, a simplification of the prediction can be displayed as "next: 'mathematical expression' or 'end statement' " because a top-down algorithm will know which "node" can be expected next.
+\end{itemize}
+Based on this information, one path to explore can be a combination of the 2 algorithm based on the context by using the same syntax tree and collect as much as possible information during the parsing process.

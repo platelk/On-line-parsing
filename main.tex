@@ -1,7 +1,14 @@
-\documentclass[11pt]{article}
+\documentclass[a4paper,13pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{hyperref}
 
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[acronym, toc]{glossaries}
 %in the preamble
 %--------------------------------
 \usepackage[
@@ -10,16 +17,47 @@
 ]{biblatex}
 
 \addbibresource{bibfile.bib}
-%--------------------------------
 
-\title{Kent Project Research: On-line parsing}
-\author{Kevin PLATEL}
-\date{March 2015}
+\makeglossaries
+\input{chapter/glossary.tex}
+
+\graphicspath{ {resources/} }
+
+
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+%--------------------------------
 
 \begin{document}
 % Title section
-\maketitle
+\input{chapter/titlepage}
 
+\newpage{}
 % Abstract // TODO
 \renewcommand{\contentsname}{Abstract}
 
@@ -31,33 +69,49 @@
 
 % Introduction
 \section{Introduction}
-\input{chapter/intro}
-    % Objectives // TODO -> In introduction
+\input{chapter/introduction/intro}
     \subsection{Aims of the research}
-    \input{chapter/aims_of_research}
+    \input{chapter/introduction/aims_of_research}
 
 % Background
 \section{Background}
-\input{chapter/background}
+\input{chapter/background/background}
     
-    % Related Work // TODO -> In background
     \subsection{Related work}
-    \input{chapter/related_work}
+    \input{chapter/background/related_work}
 
 
-% Approach // TODO
-\section{Reflexion and approach}
+% Approach
+\clearpage
+\section{Design}
+\input{chapter/design/intro}
 
+    \subsection{Reflexion}
+    \input{chapter/design/reflexion}
+    
+    \subsection{Approach}
+    \input{chapter/design/approach}
+    
+    \subsection{Design}
+    \input{chapter/design/design}
+    
 % Experiment // TODO
-\section{Experimentation}
+\section{Implementation}
+\input{chapter/implementation/intro}
 
-\section{Result \& Conclusion}
 
-\section{And after}
+\section{Analysis \& Result}
 
+\section{Conclusion}
+
+\section{Future work}
+\clearpage
 \section{Link \& Resources}
 \input{chapter/resources}
 
+\section{Glossary}
+\printglossary[type=\acronymtype]
+\clearpage
 \section{References}
 \nocite{*}
  
