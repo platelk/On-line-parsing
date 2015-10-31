@@ -1,5 +1,12 @@
-All this technique describe before about parsing technique for dynamic parsing or "on-line" parsing are use in many research field or application.\\
+All this techniques described before about parsing algorithms for dynamic parsing or "on-line" parsing are used in many research field or application.
+
 \subsubsection{Natural language}
-A lot of the research about "on-line" parsing are about the parsing of what we can call "Natural language" or "human language", all this term refer to the parsing of English or French language. This research field is used in this context for application like Word or open office, where correction, prediction and specially because it's important, where treating big file, to not re-parse all the file on each modification.\\
-\\
-\subsubsection{Compilers}
+A lot of the research about "on-line" parsing is about the parsing of what we can call "Natural language" or "human language", all this terms refer to the parsing of English or French languages. This research field is used in this context for application like Word or Open Office, where correction and prediction efficiency are specially important when treating big file, to not re-parse all the file on each modification.
+
+\subsubsection{Compilers \& interpreters}
+Compilers and interpreters are an intense field of study because they are intimately linked to programming language theory and performance.\\
+Compilers, by definitions, are not linked to the concept of "on-line" parsing because the input file will not be modify during the compile. Another kind of compiler do "Just In Time" compilation. In JIT compiler the file is read a first time and then the "compiler" will compile the next instruction during the run-time. It has the advantage to not re-compile or interpret something already compiled.\\
+The increasing popularity of this kind of parsers that allows more dynamic, run-time features and efficiency for programming language. It has also being related to the need of efficient ways of doing run-time modification inside the syntactic tree.
+
+\subsubsection{Browser}
+Inside your browser, in many web site today, a lot of scripts will modify your web page to give a feeling of dynamism or to give feedback to the user. This kind of modification are often made directly on the HTML page, and more specifically on the DOM (Document Object Modelisation). This intense modifications are often done directly on the parse tree of the HTML page and so a parallel can be done with on-line parsing technique where the modification is made on the DOM and not directly in the file.

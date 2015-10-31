@@ -19,8 +19,6 @@
 
 \maketitle
 
-\section{Introduction}
-\section{Deadline}
 \section{Log}
 \subsection{\date{Saturday, March 21, 2015}}
 Today, i start my logbook and setup my work environment. I have decide to use Latex for my logbook, my bibliography and my dissertation.\\
@@ -303,6 +301,402 @@ This week, i go back to France, so between the clean up of my house and moving b
 \item I have implement a basic top-down algorithm, bug still some bug
 \end{itemize}
 
+\subsection{\date{Thursday, July 12, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item re-writing part of my introduction and background section
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have improve my introduction and background section by adding more explanation
+\end{itemize}
+
+\subsection{\date{Thursday, July 13, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Continue working on the parser
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have some issue about the the tree construction, the node are correctly created but they are not correctly linked.
+\end{itemize}
+
+\subsection{\date{Wednesday, July 14, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Meeting with Olaf.
+\end{itemize}
+
+\subsection{\date{Friday, July 17, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Finish the Top-down algorithm
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have finish working on the top-down parser. It's completely functional
+\end{itemize}
+
+\subsection{\date{Monday, July 20, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Making deeper research on LR parser
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have found several resources on Grammar Tables which are necessary for LR parser, i have to look more deeply on how to generate this kind of table.
+\end{itemize}
+
+\subsection{\date{Thursday, July 21, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Search on how generate LR grammar table
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item To generate grammar table, i need to transform my grammar, define more like a BNF to a CNF grammar. After this operation, it will be easier to create a None-deterministic Finite Automaton to create the grammar table
+\end{itemize}
+
+
+\subsection{\date{Wednesday, July 22, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Meeting with Olaf.
+\end{itemize}
+
+\subsection{\date{Saturday, July 25, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generate a CNF grammar from a BNF grammar
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have make good progress but correctly generate rules with quantifier like "one or more" or "zero or more" is hard in CNF
+\end{itemize}
+
+\subsection{\date{Monday, July 27, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Finnishing CNF grammar generation, begin NFA generation
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have make good progress but correctly generate rules with quantifier like "one or more" or "zero or more" is hard in CNF
+\end{itemize}
+
+\subsection{\date{Wednesday, July 29, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Due to some issue i wasn't in the meeting
+\end{itemize}
+
+\subsection{\date{Monday, August 3, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Debug some issue with CNF generation, begin NFA generation
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have a good start, with a beginning of NFA, i have to do more research about grammar table generation from NFA to be sure
+\end{itemize}
+
+\subsection{\date{Thursday, August 4, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item More research about LR parser and specially grammar table generation
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have a better understanding, but I'm not perfectly sure to understand all the concept
+\end{itemize}
+
+\subsection{\date{Wednesday, August 5, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Meeting with Olaf.
+\end{itemize}
+
+\subsection{\date{Saturday, August 8, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item More research on LR parser
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I think i have enough material to start a implementation
+\end{itemize}
+
+\subsection{\date{Monday, August 10, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generation of the NFA from the CNF grammar
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have a beginning but it's hard to generate a good NFA with all the case (OR, AND, quantifier...), i have a NFA for simple case but i need more work on it.
+\end{itemize}
+
+\subsection{\date{Thursday, August 11, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generation of the NFA from the CNF grammar
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have make some progress, specially for the AND and OR in the grammar,
+\end{itemize}
+
+\subsection{\date{Wednesday, August 12, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\item Generation of the NFA from the CNF grammar
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Meeting with Olaf.
+\item I have a pretty stable NFA, now i have to generate the table, it will be the ultimate test for my grammar
+\end{itemize}
+
+
+\subsection{\date{Saturday, August 15, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generation of the Grammar table from the NFA
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item it don't work at all, some columm are correct but really few
+\end{itemize}
+
+\subsection{\date{Monday, August 17, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generation of the Grammar table from the NFA
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item it don't work at all, some columm are correct but really few
+\end{itemize}
+
+\subsection{\date{Thursday, August 18, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generation of the Grammar table from the NFA
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have some progress for realy simple grammar, but if i increase the complexity it doesn't work
+\end{itemize}
+
+\subsection{\date{Wednesday, August 19, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\item Generation of the Grammar table from the NFA
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Meeting with Olaf.
+\item Still no real progress, i don't understand some relation between the NFA i have and how to generate exactly the table
+\end{itemize}
+
+\subsection{\date{Friday, August 21, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generation of the Grammar table from the NFA
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item So much bug, and my code is now unreadable, i start over, i think this is the best option
+\end{itemize}
+
+\subsection{\date{Saturday, August 22, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generation of the Grammar table from the NFA
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Start over was a good idea, i have a much cleaner code and a good result for simple grammar
+\end{itemize}
+
+\subsection{\date{Monday, August 24, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Generation of the Grammar table from the NFA
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have remove some of the bug, know i have to implement the LR parser (finally)
+\end{itemize}
+
+\subsection{\date{Thursday, August 25, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Implement the LR parser
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item With the grammar table, the implementation was pretty simple, i have only a little bug for some reduce
+\end{itemize}
+
+\subsection{\date{Wednesday, August 26, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\item Debug LR parser
+\item Clean the code and comment for the corpus submission
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Meeting with Olaf.
+\item My LR parser works, know i have to clean my code for the corpus submission
+\item The code is globally commented and cleaner
+\end{itemize}
+
+\subsection{\date{Tuesday, August 27, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Corpus submission
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item I have clean and comment a little more and submit
+\end{itemize}
+
+\subsection{\date{Monday, August 31, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Dissertation
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Work on the dissertation
+\end{itemize}
+
+\subsection{\date{Wednesday, September 2, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Meeting with Olaf
+\end{itemize}
+
+\subsection{\date{Friday, September 4, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Dissertation
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Work on the dissertation
+\end{itemize}
+
+\subsection{\date{Monday, September 7, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Dissertation
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Work on the dissertation
+\end{itemize}
+
+\subsection{\date{Thursday, September 8, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Dissertation
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Work on the dissertation
+\end{itemize}
+
+\subsection{\date{Wednesday, September 9, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Meeting
+\item Clean the dissertation and make some correction
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Meeting with Olaf
+\item Review and correction
+\end{itemize}
+
+\subsection{\date{Tuesday, September 10, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item Clean the dissertation and make some correction
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Review and correction
+\end{itemize}
+
+\subsection{\date{Saturday, September 12, 2015}}
+
+\subsubsection{To do}
+\begin{itemize}
+\item submit my dissertation
+\end{itemize}
+\subsubsection{Done}
+\begin{itemize}
+\item Dissertation send by post
+\end{itemize}
 
 \section{Reference}
 \nocite{*}

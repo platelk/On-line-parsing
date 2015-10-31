@@ -1,0 +1,17 @@
+In this section, we will see the result of the implementation compare to the expectation.
+
+\subsection{The test}
+The test was supposed to be the edition of a big file (more than 5MB) and measure several times :
+\begin{itemize}
+\item Start-up time (after all the file have been parsed)
+\item Little edition (\( <5 entry\)) at the beginning of the file
+\item Important edition (\(> 200 entry\)) at the beginning of the file
+\item Little edition (\( <5 entry\)) at the middle of the file
+\item Important edition (\(> 200 entry\)) at the middle of the file 
+\end{itemize}
+With 3 case of study : One with a bottom-up parser (LR), one with a top-down parser, and one with my algorithm.
+
+\subsection{The result}
+No result are available because the implementation hasn't been finished.\\
+The expected result was to show a better start-up time with the bottom-up algorithm and globally a better time for little edition for the top-down algorithm, but with a good average of my algorithm and a better performance for important edition.
+

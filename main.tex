@@ -1,4 +1,4 @@
-\documentclass[a4paper,13pt]{article}
+\documentclass[a4paper,15pt]{article}
 \usepackage[utf8]{inputenc}
 
 \usepackage{listings}
@@ -9,6 +9,9 @@
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage[acronym, toc]{glossaries}
+\usepackage[final]{pdfpages}
+
+\setboolean{@twoside}{false}
 %in the preamble
 %--------------------------------
 \usepackage[
@@ -54,12 +57,16 @@
 %--------------------------------
 
 \begin{document}
+
+\includepdf[pages=-]{chapter/cover.pdf}
+
 % Title section
 \input{chapter/titlepage}
 
 \newpage{}
 % Abstract // TODO
-\renewcommand{\contentsname}{Abstract}
+\section{Abstract}
+    \input{chapter/abstract/abstract}
 
 % Index section
 \renewcommand{\contentsname}{Table of contents}
@@ -86,7 +93,7 @@
 \section{Design}
 \input{chapter/design/intro}
 
-    \subsection{Reflexion}
+    \subsection{Reflection}
     \input{chapter/design/reflexion}
     
     \subsection{Approach}
@@ -95,23 +102,26 @@
     \subsection{Design}
     \input{chapter/design/design}
     
-% Experiment // TODO
+\clearpage
 \section{Implementation}
 \input{chapter/implementation/intro}
+\input{chapter/implementation/implementation}
 
-
+\clearpage
 \section{Analysis \& Result}
+\input{chapter/result/result}
 
+\clearpage
 \section{Conclusion}
+\input{chapter/conclusion/conclusion}
 
 \section{Future work}
+\input{chapter/future/future}
+
 \clearpage
 \section{Link \& Resources}
 \input{chapter/resources}
 
-\section{Glossary}
-\printglossary[type=\acronymtype]
-\clearpage
 \section{References}
 \nocite{*}
  
